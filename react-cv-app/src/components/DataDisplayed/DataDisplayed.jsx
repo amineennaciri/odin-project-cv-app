@@ -1,15 +1,12 @@
 import React from 'react'
 
-function DataDisplayed({phone, email, fullName, setPhone, setEmail, setFullName}){
-    const emailInput = email;
-    const phoneInput = phone;
-    const fullNameInput = fullName;
-    setFullName('');
-    setEmail('');
-    setPhone('');
+function DataDisplayed({dataset}){
     return (
         <>
-            <h1>Data Displayed:{' '}{emailInput}{' '}{phoneInput}{' '}{fullNameInput}</h1>
+            <h1>Data Displayed below:</h1>
+            {dataset.map((el,index)=>(
+                <h2 key={index}>{el}</h2>
+            ))}
         </>
     )
 }
